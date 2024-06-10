@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="slot-machine">
+        <div class="slots">
+            <div class="slot-container">
+                <div class="slot" id="slot1"></div>
+            </div>
+            <div class="slot-container">
+                <div class="slot" id="slot2"></div>
+            </div>
+            <div class="slot-container">
+                <div class="slot" id="slot3"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button onclick="spin(1)">Bet Single</button>
+            <button onclick="spin(2)">Bet Double</button>
+            <button onclick="spin(3)">Bet Triple</button>
+        </div>
+        <div class="money">
+            <span id="money">Starting Money: $100</span>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
