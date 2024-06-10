@@ -31,8 +31,11 @@ body {
 
 .slot {
     width: 100px;
-    height: 100px;
+    height: 500px; /* Adjusted to handle multiple images in a column */
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0; /* Ensure it's at the starting position */
 }
 
 .slot img {
@@ -65,5 +68,5 @@ body {
 }
 
 .animate {
-    animation: spin 1s ease-in-out infinite;
+    animation: spin 1.5s ease-in-out; /* Adjusted timing */
 }

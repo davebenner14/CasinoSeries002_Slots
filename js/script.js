@@ -47,7 +47,7 @@ function spin(betMultiplier) {
         animateSlot(slot, randomImages, index);
     });
     
-    setTimeout(() => calculateWinnings(results, betMultiplier), 1500);
+    setTimeout(() => calculateWinnings(results, betMultiplier), 1600);
 }
 
 function getRandomImages() {
@@ -66,11 +66,19 @@ function animateSlot(slot, images, index) {
         imgElement.src = `Assets/${image}`;
         slot.appendChild(imgElement);
     });
-    slot.classList.add('animate');
+    slot.style.transition = 'none';
+    slot.style.transform = 'translateY(0)';
+    
     setTimeout(() => {
-        slot.classList.remove('animate');
+        slot.style.transition = 'transform 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55)'; /* Smooth transition */
+        slot.style.transform = 'translateY(-400%)';
+    }, 10);
+    
+    setTimeout(() => {
+        slot.style.transition = 'none';
+        slot.style.transform = 'translateY(0)';
         slot.innerHTML = `<img src="Assets/${images[images.length - 1]}" alt="slot">`;
-    }, 1500 + (index * 200));
+    }, 1600); /* Ensure the animation timing is correct */
 }
 
 function calculateWinnings(results, betMultiplier) {
